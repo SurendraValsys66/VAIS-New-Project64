@@ -1177,12 +1177,21 @@ export default function BuildVAISForm() {
 
                   {/* Search Intent Topics */}
                   <div>
-                    <Label className="text-sm font-medium text-valasys-gray-700 mb-1 block">
-                      Topics
-                    </Label>
-                    <p className="text-xs text-valasys-gray-600 mb-3">
-                      Select intent topics to target specific buyer behaviors and get more precise results
-                    </p>
+                    <div className="flex items-center gap-2 mb-3">
+                      <Label className="text-sm font-medium text-valasys-gray-700">
+                        Topics
+                      </Label>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <button className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-valasys-gray-200 hover:bg-valasys-gray-300 text-valasys-gray-600 cursor-help">
+                            <span className="text-xs font-semibold">?</span>
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-xs">
+                          <p className="text-sm">Select intent topics to target specific buyer behaviors and get more precise results</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
                     <div className="relative">
                       <Search className="absolute left-3 top-3 h-4 w-4 text-valasys-gray-400" />
                       <Input
