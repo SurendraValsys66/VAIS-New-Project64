@@ -24,11 +24,13 @@ export interface ProspectList {
 interface AddToListDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  prospectId: string;
-  prospectName: string;
+  prospectId?: string;
+  prospectName?: string;
+  prospectIds?: string[]; // For bulk operations
   lists: ProspectList[];
   onListCreated: (list: ProspectList) => void;
   onProspectAdded: (listId: string, prospectId: string) => void;
+  onProspectsAdded?: (listId: string, prospectIds: string[]) => void; // For bulk add
 }
 
 export default function AddToListDialog({
