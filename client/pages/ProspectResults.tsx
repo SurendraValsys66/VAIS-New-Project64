@@ -56,7 +56,6 @@ import {
   Linkedin,
   MapPin,
   Calendar,
-  Star,
   ExternalLink,
   Copy,
   Zap,
