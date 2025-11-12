@@ -74,8 +74,10 @@ export default function WishlistProspects() {
   const [searchTerm, setSearchTerm] = useState("");
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [deleteAlertOpen, setDeleteAlertOpen] = useState(false);
+  const [createListDialogOpen, setCreateListDialogOpen] = useState(false);
   const [selectedList, setSelectedList] = useState<ProspectList | null>(null);
   const [editedListName, setEditedListName] = useState("");
+  const [newListName, setNewListName] = useState("");
 
   useEffect(() => {
     try {
