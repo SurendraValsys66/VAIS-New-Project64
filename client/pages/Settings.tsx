@@ -156,6 +156,14 @@ export default function Settings() {
     setApiSettings({ ...apiSettings, apiKey: newKey });
   };
 
+  const handleCancelSubscriptionConfirm = (email: string, reason: string) => {
+    console.log("Subscription cancellation confirmed:", {
+      email,
+      reason,
+      timestamp: new Date().toISOString(),
+    });
+  };
+
   return (
     <DashboardLayout>
       <div className="space-y-6">
