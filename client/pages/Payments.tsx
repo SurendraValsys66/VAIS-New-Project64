@@ -430,29 +430,56 @@ function AddPaymentMethodDialog({
 
         <Accordion type="single" collapsible defaultValue="stripe">
           <AccordionItem value="stripe">
-            <AccordionTrigger className="text-lg font-semibold">
+            <AccordionTrigger className="text-base font-semibold hover:no-underline py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors">
               <div className="flex items-center gap-3">
-                <CreditCard className="w-5 h-5" />
-                <span>Card</span>
+                <div className="flex items-center justify-center w-10 h-10 bg-blue-50 rounded-lg">
+                  <CreditCard className="w-5 h-5 text-blue-600" />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">Card</p>
+                  <p className="text-xs text-gray-500">Visa, Mastercard, Amex</p>
+                </div>
               </div>
             </AccordionTrigger>
             <AccordionContent>
-              <div className="space-y-4 pt-4">
+              <div className="space-y-5 pt-4 pb-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Card Information
+                    Card information
                   </label>
-                  <Input
-                    placeholder="1234 1234 1234 1234"
-                    value={formData.cardNumber}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        cardNumber: e.target.value.replace(/\s/g, ""),
-                      })
-                    }
-                    className="h-10"
-                  />
+                  <div className="relative">
+                    <Input
+                      placeholder="1234 1234 1234 1234"
+                      value={formData.cardNumber}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/\s/g, "");
+                        setFormData({ ...formData, cardNumber: val });
+                      }}
+                      className="h-11 pr-28 text-base"
+                    />
+                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex gap-1">
+                      <img
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%231A1F71' width='48' height='32' rx='4'/%3E%3Ctext x='24' y='20' font-size='14' font-weight='bold' fill='white' text-anchor='middle'%3EVISA%3C/text%3E%3C/svg%3E"
+                        alt="Visa"
+                        className="w-8 h-5 object-cover"
+                      />
+                      <img
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF5F00'/%3E%3Ccircle cx='32' cy='16' r='10' fill='%23EB001B'/%3E%3Cpath d='M 22 10 Q 26 14 22 18 Q 18 14 22 10' fill='%23F79E1B'/%3E%3C/svg%3E"
+                        alt="Mastercard"
+                        className="w-8 h-5 object-cover"
+                      />
+                      <img
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23006FCF' width='48' height='32' rx='4'/%3E%3Ctext x='24' y='20' font-size='12' font-weight='bold' fill='white' text-anchor='middle'%3EAMEX%3C/text%3E%3C/svg%3E"
+                        alt="Amex"
+                        className="w-8 h-5 object-cover"
+                      />
+                      <img
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23FF5F00' width='48' height='32' rx='4'/%3E%3Ctext x='24' y='20' font-size='10' font-weight='bold' fill='white' text-anchor='middle'%3EDISCOVER%3C/text%3E%3C/svg%3E"
+                        alt="Discover"
+                        className="w-8 h-5 object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -469,21 +496,34 @@ function AddPaymentMethodDialog({
                           expiryDate: e.target.value,
                         })
                       }
-                      className="h-10"
+                      className="h-11"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       CVC
                     </label>
-                    <Input
-                      placeholder="CVC"
-                      value={formData.cvc}
-                      onChange={(e) =>
-                        setFormData({ ...formData, cvc: e.target.value })
-                      }
-                      className="h-10"
-                    />
+                    <div className="relative">
+                      <Input
+                        placeholder="CVC"
+                        value={formData.cvc}
+                        onChange={(e) =>
+                          setFormData({ ...formData, cvc: e.target.value })
+                        }
+                        className="h-11 pr-10"
+                      />
+                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                        <svg
+                          className="w-6 h-6 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <rect x="3" y="6" width="18" height="13" rx="2" />
+                          <rect x="5" y="13" width="14" height="4" fill="currentColor" opacity="0.3" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -500,7 +540,7 @@ function AddPaymentMethodDialog({
                         cardholderName: e.target.value,
                       })
                     }
-                    className="h-10"
+                    className="h-11"
                   />
                 </div>
 
@@ -514,7 +554,7 @@ function AddPaymentMethodDialog({
                       setFormData({ ...formData, country: value })
                     }
                   >
-                    <SelectTrigger className="h-10">
+                    <SelectTrigger className="h-11">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -527,7 +567,7 @@ function AddPaymentMethodDialog({
                   </Select>
                 </div>
 
-                <DialogFooter className="pt-4">
+                <DialogFooter className="pt-2">
                   <Button variant="outline" onClick={() => onOpenChange(false)}>
                     Cancel
                   </Button>
