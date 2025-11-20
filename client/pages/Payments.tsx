@@ -694,14 +694,14 @@ export default function Payments() {
           <TabsList className="grid w-full grid-cols-2 bg-gray-100 p-1">
             <TabsTrigger
               value="payment-methods"
-              className="data-[state=active]:bg-white data-[state=active]:shadow-sm"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-valasys-orange data-[state=active]:to-valasys-orange-light data-[state=active]:text-white data-[state=active]:shadow-sm"
             >
               <CreditCard className="w-4 h-4 mr-2" />
               Payment Methods
             </TabsTrigger>
             <TabsTrigger
               value="payment-history"
-              className="data-[state=active]:bg-white data-[state=active]:shadow-sm"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-valasys-orange data-[state=active]:to-valasys-orange-light data-[state=active]:text-white data-[state=active]:shadow-sm"
             >
               <Download className="w-4 h-4 mr-2" />
               Transaction History
