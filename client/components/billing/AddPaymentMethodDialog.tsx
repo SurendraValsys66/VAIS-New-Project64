@@ -74,21 +74,6 @@ const getCardNetworkFromNumber = (cardNumber: string): string => {
   return "";
 };
 
-const getCardBgGradient = (cardNetwork?: string): string => {
-  switch (cardNetwork) {
-    case "Visa":
-      return "from-blue-600 via-blue-500 to-cyan-500";
-    case "Mastercard":
-      return "from-red-600 via-orange-500 to-yellow-500";
-    case "American Express":
-      return "from-slate-800 via-slate-700 to-slate-900";
-    case "Discover":
-      return "from-orange-600 via-orange-500 to-red-500";
-    default:
-      return "from-gray-700 via-gray-600 to-gray-800";
-  }
-};
-
 function validateCardForm(data: AddPaymentFormData): ValidationError[] {
   const errors: ValidationError[] = [];
 
