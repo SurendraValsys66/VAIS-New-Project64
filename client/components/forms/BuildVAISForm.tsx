@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/tooltip";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
