@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Eye, RefreshCw, Users, Sparkles, FileText, Star } from "lucide-react";
+import { Eye, RefreshCw, Users, Sparkles, FileText, Star, MessageCircle } from "lucide-react";
 
 export type RecentUpload = { name: string; date: string; type: string };
 
@@ -16,6 +16,7 @@ export default function QuickAccess({
   onClickSaved,
   todayStats,
   onNavigate,
+  onFeedback,
 }: {
   recentUploads: RecentUpload[];
   onPreview: (upload: RecentUpload) => void;
@@ -29,6 +30,7 @@ export default function QuickAccess({
     creditsUsed: number;
   };
   onNavigate?: (section: "abm" | "lal") => void;
+  onFeedback?: () => void;
 }) {
   return (
     <Card data-tour="abm-quick-access" className="shadow-lg">
