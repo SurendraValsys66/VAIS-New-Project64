@@ -107,11 +107,10 @@ export function VAISFeedbackModal({
             </div>
 
             {/* Rating Labels */}
-            <div className="flex justify-between text-xs text-gray-500 px-2">
+            <div className="flex justify-between text-xs text-gray-500 px-2 mt-2">
               <span>Very unsatisfied</span>
               <span>Totally satisfied</span>
             </div>
-
           </div>
 
           {/* Comment Input */}
