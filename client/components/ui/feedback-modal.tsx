@@ -94,7 +94,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
             placeholder="Any comments for us?"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-            className="w-full p-4 text-sm text-gray-900 placeholder-gray-400 resize-none focus:outline-none border border-gray-200 rounded-lg min-h-32 focus:ring-2 focus:ring-[#f7c52a] focus:border-transparent"
+            className="w-full p-4 text-sm text-gray-900 placeholder-gray-400 resize-none focus:outline-none border border-gray-200 rounded-lg min-h-32 focus:ring-2 focus:ring-valasys-orange focus:border-transparent"
           />
 
           {/* Send Button */}
