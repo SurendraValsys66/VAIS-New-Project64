@@ -154,16 +154,6 @@ export const EmailBuilder: React.FC<EmailBuilderProps> = ({
     }
   }, [undoStack, redoStack, template]);
 
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: "block",
-    drop: (item: any) => {
-      handleAddBlock(item.block);
-    },
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
-
   return (
     <DashboardLayout>
       <DndProvider backend={HTML5Backend}>
