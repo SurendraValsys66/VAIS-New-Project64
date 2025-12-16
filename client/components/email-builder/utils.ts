@@ -213,6 +213,12 @@ export function createNavigationBlock(): NavigationBlock {
     backgroundColor: "#333333",
     textColor: "#ffffff",
     alignment: "center",
+    padding: 0,
+    margin: 0,
+    borderWidth: 0,
+    borderColor: "#000000",
+    borderRadius: 0,
+    visibility: "all",
   };
 }
 
