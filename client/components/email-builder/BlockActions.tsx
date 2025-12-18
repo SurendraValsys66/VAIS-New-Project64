@@ -8,8 +8,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   Plus,
-  ChevronUp,
-  ChevronDown,
   Copy,
   Trash2,
 } from "lucide-react";
