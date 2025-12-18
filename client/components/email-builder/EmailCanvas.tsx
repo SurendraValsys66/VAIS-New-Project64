@@ -34,17 +34,21 @@ export const EmailCanvas: React.FC<EmailCanvasProps> = ({
   onFooterElementSelect,
   onTemplateSubjectChange,
   onBackgroundColorChange,
+  onMoveBlockUp,
+  onMoveBlockDown,
+  onDuplicateBlock,
+  onDeleteBlock,
 }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: ["block", "template"],
     drop: (item: any) => {
       if (item.blocks) {
-        // Template dropped - add all blocks
+        // Template dropped - add all blocks at the end
         item.blocks.forEach((block: ContentBlock) => {
           onAddBlock(block);
         });
       } else if (item.block) {
-        // Single block dropped
+        // Single block dropped at the end
         onAddBlock(item.block);
       }
     },
