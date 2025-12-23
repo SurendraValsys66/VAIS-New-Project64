@@ -719,18 +719,18 @@ export default function MyDownloadedList() {
                                   Send to CRM
                                 </Button>
                               </DropdownMenuTrigger>
-                              <DropdownMenuContent align="end" className="w-80 p-0">
+                              <DropdownMenuContent align="end" className="w-80 p-0 shadow-2xl rounded-xl border border-gray-200">
                                 {/* Salesforce Section */}
-                                <div className="px-2 pt-2">
-                                  <div className="px-2 py-2 rounded-lg bg-blue-50 border border-blue-200 mb-2">
-                                    <div className="flex items-center gap-2">
-                                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#00A1E0] text-white text-xs font-bold">
+                                <div className="px-3 pt-3 pb-2">
+                                  <div className="px-3 py-2.5 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 mb-3 shadow-sm">
+                                    <div className="flex items-center gap-3">
+                                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[#00A1E0] to-[#0088B8] text-white text-xs font-bold shadow-md">
                                         SF
                                       </span>
-                                      <span className="text-sm font-semibold text-blue-900">Salesforce</span>
+                                      <span className="text-sm font-bold text-blue-900 tracking-tight">Salesforce</span>
                                     </div>
                                   </div>
-                                  <div className="space-y-1 mb-2">
+                                  <div className="space-y-1.5 mb-2.5">
                                     {salesforceAccounts.length === 0 ? (
                                       <div className="px-2 py-2 text-xs text-gray-500 italic">
                                         No accounts connected
@@ -779,9 +779,9 @@ export default function MyDownloadedList() {
                                       setSfAddOpen(true);
                                     }}
                                   >
-                                    <div className="w-full px-3 py-2 rounded-md bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700 hover:from-blue-100 hover:to-blue-200 border border-blue-300 hover:border-blue-400 flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-                                      <Plus className="h-3.5 w-3.5" />
-                                      <span className="text-sm font-medium">Add Salesforce Account</span>
+                                    <div className="w-full px-3 py-2.5 rounded-lg bg-gradient-to-r from-blue-100 to-blue-150 text-blue-700 hover:from-blue-200 hover:to-blue-250 border border-blue-400 hover:border-blue-500 flex items-center justify-center gap-2 transition-all cursor-pointer font-medium shadow-sm hover:shadow-md">
+                                      <Plus className="h-4 w-4" />
+                                      <span className="text-sm font-semibold">Add Salesforce Account</span>
                                     </div>
                                   </DropdownMenuItem>
                                 </div>
